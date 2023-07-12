@@ -1,0 +1,160 @@
+depas=[["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"],
+       ["A","B","C","D"] ]
+total1_a=0
+total2_B=0
+total3_C=0
+total3_D=0
+cant4_A=0
+cant5_B=0
+cant6_C=0
+cant7_D=0
+totales7_dep=[]
+totales8=[]
+
+rut=[]
+def disponibilidad ():
+  dispo=len(depas)
+  for i in range(dispo):
+    print(depas[i])
+
+def piso_selec (x):
+  borrar=str(input("\nIngrese el tipo del departamento seleccionado (ejemplo: D) : "))  
+  if borrar == "A":      
+    depas[x-1].remove(borrar)
+    depas[x-1].insert(0,'X')
+    total_A+=3800
+    cant_A+1
+    totales.append(total_A)
+    totales_dep.append(cant_A)
+
+  if borrar == "B":      
+    depas[x-1].remove(borrar)
+    depas[x-1].insert(1,'X')
+    total_B=3000
+    cant_B+=1
+    totales.append(total_B)
+    totales_dep.append(cant_B)
+  if borrar == "C":      
+    depas[x-1].remove(borrar)
+    depas[x-1].insert(2,'X')
+    total_C=2800
+    cant_C+=1
+    totales.append(total_C)
+    totales_dep.append(cant_C)
+  if borrar == "D":      
+    depas[x-1].remove(borrar)
+    depas[x-1].insert(3,'X')
+    total_D=3500
+    cant_D+=1
+    totales.append(total_D)
+    totales_dep.append(cant_D)
+
+
+a=1
+while a==1:
+  print("")
+  print("Casa FELIZ ")
+  print("")
+  print(" Opción 1 - Comprar Departamento")
+  print(" Opción 2 - Mostrar Departamentos Disponibles")
+  print(" Opción 3 - Ver Listado de Compradores")
+  print(" Opción 4 - Mostrar Ganancias Totales")
+  print(" Opción 5 - Salir")
+  print("")
+  try:
+    op=int(input("Ingrese una opción para continuar (1-5) : "))
+    if op > 0 or op <6:
+      if op == 1:
+        print("")
+        print("OPCIÓN 1 ")
+        print("")
+        print("Listado de Precios")
+        print("")
+        print(" Tipo A - 3.800 UF")
+        print(" Tipo B - 3.000 UF")
+        print(" Tipo C - 2.800 UF")
+        print(" Tipo D - 3.500 UF")
+        print("")
+        disponibilidad()
+        piso=int(input("\nIngrese el piso del departamento que desea comprar (1-10): "))
+        if piso >0 or piso<11:
+          if piso == 1 :
+            piso_selec(1)
+          if piso == 2 :
+            piso_selec(2)
+          if piso == 3 :
+            piso_selec(3)
+          if piso == 4 :
+            piso_selec(4)
+          if piso == 5 :
+            piso_selec(5)
+          if piso == 6 :
+            piso_selec(6)
+          if piso == 7 :
+            piso_selec(7)
+          if piso == 8 :
+            piso_selec(8)
+          if piso == 9 :
+            piso_selec(9)
+          if piso == 10 :
+            piso_selec(10)
+          
+        print("El formato RUT es sin puntos, ni guión y sin digito verrificador (Ejemplo: 10.305.678-9, debe ser 10305678 ")
+        rut=int("\nIngrese el RUT del cliente : ")
+        if len(rut) == 8:
+          ruts.append(rut)
+          
+      if op == 2 :
+        print("")
+        print(" →→ OPCIÓN 2←←")
+        print("")
+        print("Los Departamentos Disponibles son :")
+        print("")
+        disponibilidad()
+
+      if op == 3 : 
+        print("")
+        print(" OPCIÓN 2")
+        print("")
+        print("Las Ganancias Totales son :")
+        print("")
+        print( " ____________________________________________")
+        print( "|                   |              |         |")
+        print( "| Tipo departamento |    Cantidad  |  Total  |")
+        print( "|                   |              |         | ")
+        print( "|___________________|______________|_________|")
+        print( "|                   |              |         |")
+        print(f"| Tipo A 3.800 UF   |   {cant_A   }|  {total_A}|")
+        print( "|                   |              |         | ")
+        print( "|                   |              |         |")
+        print(f"| Tipo B 3.000 UF   |   {cant_B   }|  {total_B}|")
+        print( "|                   |              |         | ")
+        print( "|                   |              |         |")
+        print(f"| Tipo C 2.800 UF   |   {cant_C   }|  {total_C}|")
+        print( "|                   |              |         | ")
+        print( "|                   |              |         |")
+        print(f"| Tipo D 3.500 UF   |   {cant_D   }|  {total_D}|")
+        print( "|___________________|______________|_________| ")
+        print(f"| T O T A L         |   {totales_dep}| {totales}|")
+        print(" |___________________|______________|_________|")
+
+
+      
+      if op == 5:
+        print("")
+        print("")
+        a=0
+        print(" salir ")
+
+
+  except:
+    print("  error ")
+    a=0
